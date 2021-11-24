@@ -16,7 +16,7 @@ export const postTask = task => {
       }
       return response.json();
     })
-    .then(data => store.tasks.push({ id: data.name, ...task }));
+    .then(data => (store.tasks = [{ id: data.name, ...task }, ...store.tasks]));
 };
 
 export const getTasks = () => {
@@ -30,7 +30,7 @@ export const getTasks = () => {
     .then(data => {
       if (data) {
         const keys = Object.keys(data);
-        const tasks = keys.map(key => ({ id: key, ...data[key] }));
+        const tasks = keys.map(key => ({ id: key, ...data[key] })).reverse();
         store.tasks = tasks;
       }
     });

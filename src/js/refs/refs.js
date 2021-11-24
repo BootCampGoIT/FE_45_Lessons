@@ -3,4 +3,5 @@ export const refs = {
   main: document.querySelector('.mainContent'),
   mainModal: document.querySelector('.mainModal'),
   mainModalContent: document.querySelector('.mainModalContent'),
+  pagList: document.querySelector('.pagList'),
 };

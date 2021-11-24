@@ -1,4 +1,8 @@
 .mainHeader {
   background-color: gray;
   height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
 }

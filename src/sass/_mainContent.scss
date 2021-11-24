@@ -2,3 +2,52 @@
   min-height: calc(100vh - 60px);
   background-color: lightgray;
 }
+
+.taskForm {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid cornflowerblue;
+  width: 300px;
+}
+
+.taskLabel {
+  padding-top: 10px;
+}
+
+.taskInput {
+  outline: none;
+  border-radius: 6px;
+  margin: 10px 0;
+  border: 1px solid cornflowerblue;
+  height: 26px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.taskAddButton {
+  margin-top: 10px;
+}
+
+.taskList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.taskItem {
+  width: 20%;
+  border: 1px solid cornflowerblue;
+}
+
+.pagList {
+  display: flex;
+  margin-top: 20px;
+}
+
+.pagItem:not(:last-child) {
+  margin-right: 10px;
+}
+
+.pagItemActive {
+  background-color: crimson;
+}

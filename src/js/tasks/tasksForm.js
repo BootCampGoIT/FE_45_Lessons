@@ -1,5 +1,6 @@
 import { postTask } from '../api/api';
 import { store } from '../data';
+import { createPaginationMarkup, getTasksSlice } from './paginationTasks';
 import { createTaskList } from './tasksList';
 
 const refs = {
@@ -16,7 +17,9 @@ const data = {
 const addTask = e => {
   e.preventDefault();
   postTask(data.task).then(() => {
-    createTaskList(store.tasks);
+    getTasksSlice();
+    createPaginationMarkup()
+
     data.task.title = '';
     data.task.desc = '';
     refs.taskForm.reset();
@@ -24,10 +27,7 @@ const addTask = e => {
 };
 
 const onHandleChange = e => {
-  // console.log('e.target :>> ', e.target);
-  // console.log('e.target.value :>> ', e.target.value);
   const { name, value } = e.target;
-  // console.log(`${name} - ${value}`);
   data.task[name] = value;
 };
 

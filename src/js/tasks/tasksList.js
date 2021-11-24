@@ -1,5 +1,6 @@
 import { deleteTask } from '../api/api';
 import { store } from '../data';
+import { createPaginationMarkup, getTasksSlice } from './paginationTasks';
 
 const refs = {
   taskList: document.querySelector('.taskList'),
@@ -26,7 +27,8 @@ const deleteTaskItem = e => {
       const id = e.target.closest('[data-id]').dataset.id;
       deleteTask(id).then(() => {
         store.tasks = store.tasks.filter(task => task.id !== id);
-        createTaskList(store.tasks);
+        getTasksSlice();
+        createPaginationMarkup();
       });
     }
   }

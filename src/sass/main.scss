@@ -12,3 +12,19 @@
 @import './header';
 @import './mainContent';
 @import './modal';
+
+button {
+  padding: 3px 10px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: cornflowerblue;
+  border-radius: 6px;
+  color: white;
+  height: 26px;
+}
+
+ul {
+  list-style: none;
+}
