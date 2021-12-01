@@ -8,9 +8,9 @@ const refs = {
 
 const createTask = task =>
   `<li class="taskItem" data-id=${task.id}>
-    <h2 class="taskName">${task.title}</h2>
-    <p>${task.desc}</p>
-    <button type="button" data-button="itemDeleteButton">Delete</button>
+    <h2 class="taskName">Name: ${task.title}</h2>
+    <p>Description: ${task.desc}</p>
+    <button type="button" data-button="itemDeleteButton" class="itemDeleteButton">Delete</button>
   </li>`;
 
 export const createTaskList = list => {
@@ -35,5 +35,3 @@ const deleteTaskItem = e => {
 };
 
 refs.taskList.addEventListener('click', deleteTaskItem);
-
-const insertTasks = () => {};

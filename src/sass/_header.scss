@@ -6,3 +6,20 @@
   padding: 0 20px;
   justify-content: space-between;
 }
+
+.headerNavigation {
+  display: flex;
+  align-items: center;
+}
+.headerNavigationItem:not(:last-child) {
+  margin-right: 20px;
+}
+.headerNavigationItem {
+  cursor: pointer;
+  &:hover {
+    color: cornflowerblue;
+  }
+}
+.headerNavigationItemActive {
+  color: cornflowerblue;
+}
