@@ -1,7 +1,13 @@
 import { signIn, signUp } from '../api/authAPI';
 import { refs } from '../refs/refs';
+import { setError } from '../store/actions';
+import { store } from '../store/store';
 
-const authPageMarkup = (isSignUpPage = false) => `<form class="authForm" name="authForm">
+const authPageMarkup = (isSignUpPage = false) => `
+<p class="error"></p>
+<p class="loader"></p>
+
+<form class="authForm" name="authForm">
 ${
   isSignUpPage
     ? `<label class="authFormLabel">
@@ -26,7 +32,9 @@ const user = {
   password: '',
   displayName: '',
 };
+
 const onHandleChange = ({ target }) => {
+  store.auth.error && setError();
   const { name, value } = target;
   user[name] = value;
 };
@@ -50,3 +58,15 @@ const removeAuthPageListeners = () => {
 };
 
 export { authPageMarkup, addAuthPageListeners, removeAuthPageListeners };
+
+// const getItem = async () => {
+
+// }
+
+// async function getItem () {
+
+// }
+
+// const getItem = async function () {
+
+// }
